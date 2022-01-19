@@ -1,3 +1,4 @@
+include <variables.scad>;
 use <bottom_plate.scad>;
 use <palm_rest.scad>;
 
@@ -7,14 +8,10 @@ plate_length = 100;
 plate_width = 121.95;
 palm_length = 70;
 palm_height = 15;
-plate_x_offset = 20.5;
 
-difference() {
-	bottom_plate(bottom_plate_thickness, bevel, plate_length, plate_width, palm_length, palm_height);
-	translate([plate_x_offset, -plate_length]) 
-		palm_rest(plate_width, palm_height, palm_length, bevel, bottom_plate_thickness);
-}
+bottom_plate(bottom_plate_thickness, bevel, plate_length, plate_width, palm_length, palm_height);
 
+color("RoyalBlue")
 translate([plate_x_offset, -plate_length]) {
 	palm_rest(plate_width, palm_height, palm_length, bevel, bottom_plate_thickness);
 }
