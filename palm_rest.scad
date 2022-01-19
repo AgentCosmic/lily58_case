@@ -1,15 +1,16 @@
 include <variables.scad>;
 
+leg_width = 20;
 padding = 10;
 
 module palm_rest(width, height, length, radius, floor_thickness) {
 	thickness = 2;
 
 	// top plate
-	translate([0, radius, height - thickness])
+	translate([0, radius, height])
 		cube([width, length - radius, thickness]);
 	// round corners
-	translate([0, length, height - thickness])
+	translate([0, length, height])
 		linear_extrude(height=thickness)
 		hull() {
 			translate([radius, 0]) circle(radius);
@@ -17,7 +18,7 @@ module palm_rest(width, height, length, radius, floor_thickness) {
 		}
 
 	// curve
-	translate([width, radius + 0.01, height - radius])
+	translate([width, radius + 0.01, height - radius + thickness])
 	rotate([90, 0, -90])
 	intersection() {
 		difference() {
@@ -27,7 +28,7 @@ module palm_rest(width, height, length, radius, floor_thickness) {
 		cube([radius, radius, width*2]);
 	}
 
-	leg_width = 20;
+	// legs
 	translate([padding, length - padding])
 		palm_leg(leg_width, thickness, height, floor_thickness);
 	translate([width - padding, length - padding + thickness])
@@ -54,16 +55,26 @@ module palm_leg(width, thickness, height, floor_thickness) {
 		cube([width / 2, thickness, floor_thickness + 0.03]); // 1 for floor bottom, 1 for floor top, 1 for feet bottom
 }
 
-module palm_feets(thickness, width, height, palm_width, palm_length) {
-	translate([padding - thickness, palm_length - padding - thickness, height])
+module palm_feets(thickness, width, height, palm_width, palm_length, screw_plate_height) {
+	translate([padding - thickness, palm_length - padding - thickness, 0])
 		feet();
-	translate([palm_width - width - padding - thickness, palm_length - padding - thickness, height])
+	translate([palm_width - width - padding - thickness, palm_length - padding - thickness, 0])
 		feet();
-	translate([palm_width - width - padding - thickness, padding - thickness, height])
+	translate([palm_width - width - padding - thickness, padding - thickness, 0])
 		feet();
-	translate([padding - thickness, padding - thickness, height])
+	translate([padding - thickness, padding - thickness, 0])
 		feet();
 	module feet() {
 		cube([width + thickness*2, thickness*3, height]);
+	}
+
+	// screw wall
+	difference() {
+		translate([palm_width - padding - (leg_width + 10) / 2, padding + thickness])
+			cube([10, thickness, screw_plate_height]);
+		// screw hole
+		translate([palm_width - padding - leg_width / 2, padding + thickness + 1, screw_diameter + 4])
+			rotate([90])
+			cylinder(thickness + 2, r=screw_diameter, center=true);
 	}
 }
