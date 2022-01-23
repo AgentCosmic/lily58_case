@@ -4,6 +4,7 @@ leg_width = 30;
 leg_thickness = 3;
 padding = 10;
 screw_y_offset = 5;
+screw_safety=0.2;
 
 module palm_rest(width, height, length, radius, floor_thickness) {
 	thickness = 3;
@@ -48,7 +49,7 @@ module palm_leg(width, height, floor_thickness) {
 		// screw hole
 		translate([width / 2, 1, floor_thickness + screw_diameter + screw_y_offset])
 			rotate([90])
-			cylinder(leg_thickness + 2, r=screw_diameter, center=true);
+			cylinder(leg_thickness + 2, r=screw_diameter/2 + screw_safety, center=true);
 	}
 	// feet hook
 	translate([width / 4, 0, -0.01]) // so it goes through the floor
@@ -90,6 +91,6 @@ module palm_feets(thickness, height, palm_width, palm_length, screw_plate_height
 		// screw hole
 		translate([palm_width - padding - leg_width / 2, padding + thickness + 1, screw_diameter + screw_y_offset])
 			rotate([90])
-			cylinder(thickness + 2, r=screw_diameter, center=true);
+			cylinder(thickness + 2, r=screw_diameter/2 + screw_safety, center=true);
 	}
 }
