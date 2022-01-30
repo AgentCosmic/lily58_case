@@ -9,5 +9,8 @@ module top_plate(thickness) {
 		translate([0, 0, -0.5])
 		linear_extrude(height=thickness + 2)
 			import("screw_holes.svg");
+		translate([0, 0, -0.5])
+		linear_extrude(height=thickness + 2)
+			import("key_holes.svg");
 	}
 }
