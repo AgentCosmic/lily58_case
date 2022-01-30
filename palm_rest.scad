@@ -96,13 +96,19 @@ module palm_feets(thickness, height, palm_width, palm_length, screw_plate_height
 		}
 	}
 
-	// screw wall
-	difference() {
-		translate([palm_width - padding - leg_width + leg_width/4, leg_thickness + padding + nozzle_size])
-			cube([leg_width / 2, thickness, screw_plate_height]);
-		// screw hole
-		translate([palm_width - padding - leg_width / 2, padding + thickness*2 + 1, screw_diameter + screw_y_offset])
-			rotate([90])
-			cylinder(thickness + 2, r=screw_diameter/2 + screw_safety, center=true);
+	// screw walls
+	translate([palm_width - padding - leg_width, padding + leg_thickness + nozzle_size])
+		screw_wall();
+	translate([padding, padding + leg_thickness + nozzle_size])
+		screw_wall();
+	module screw_wall() {
+		difference() {
+			translate([leg_width / 4, 0])
+				cube([leg_width / 2, thickness, screw_plate_height]);
+			// screw hole
+			translate([leg_width / 2, thickness/2 + 0.01, screw_diameter + screw_y_offset])
+				rotate([90])
+				cylinder(thickness + 1, r=screw_diameter/2 + screw_safety, center=true);
+		}
 	}
 }
