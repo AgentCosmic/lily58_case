@@ -10,26 +10,37 @@ module palm_rest(width, height, length, radius, floor_thickness) {
 	thickness = 3;
 
 	// top plate
-	translate([0, radius, height])
-		cube([width, length - radius, thickness]);
-	// round corners
-	translate([0, length, height])
-		linear_extrude(height=thickness)
-		hull() {
-			translate([radius, 0]) circle(radius);
-			translate([width - radius, 0]) circle(radius);
-		}
-
-	// curve
-	translate([width, radius + 0.01, height - radius + thickness])
-	rotate([90, 0, -90])
-	intersection() {
-		difference() {
-			cylinder(width*2, r=radius, center=true, $fn=16);
-			cylinder(width*2 + 1, r=radius - thickness, center=true, $fn=16);
-		}
-		cube([radius, radius, width*2]);
+	translate([0, 0, -thickness/2 + height])
+	hull() {
+		$fn = 12;
+		r = thickness/2;
+		translate([r, length - r]) sphere(d=thickness);
+		translate([width - r, length - r]) sphere(d=thickness);
+		translate([width - r, r]) sphere(d=thickness);
+		translate([r, r])sphere(d=thickness);
 	}
+
+	// // top plate
+	// translate([0, radius, height])
+	// 	cube([width, length - radius, thickness]);
+	// // round corners
+	// translate([0, length, height])
+	// 	linear_extrude(height=thickness)
+	// 	hull() {
+	// 		translate([radius, 0]) circle(radius);
+	// 		translate([width - radius, 0]) circle(radius);
+	// 	}
+    //
+	// // curve
+	// translate([width, radius + 0.01, height - radius + thickness])
+	// rotate([90, 0, -90])
+	// intersection() {
+	// 	difference() {
+	// 		cylinder(width*2, r=radius, center=true, $fn=16);
+	// 		cylinder(width*2 + 1, r=radius - thickness, center=true, $fn=16);
+	// 	}
+	// 	cube([radius, radius, width*2]);
+	// }
 
 	// legs
 	translate([padding, length - padding])
@@ -78,18 +89,19 @@ module palm_feets(thickness, height, palm_width, palm_length, screw_plate_height
 		feet();
 	module feet() {
 		difference() {
-			cube([leg_width + thickness*2, leg_thickness + thickness*2, height]);
-			translate([thickness - nozzle_size, leg_thickness - nozzle_size, 0.01])
+			translate([-nozzle_size, -nozzle_size])
+			cube([leg_width + thickness*2 + nozzle_size*2, leg_thickness + thickness*2 + nozzle_size*2, height]);
+			translate([thickness - nozzle_size, thickness - nozzle_size, 0.01])
 				cube([leg_width + nozzle_size*2, leg_thickness + nozzle_size*2, height + 0.02]);
 		}
 	}
 
 	// screw wall
 	difference() {
-		translate([palm_width - padding - leg_width, leg_thickness + padding + nozzle_size])
-			cube([leg_width, thickness, screw_plate_height]);
+		translate([palm_width - padding - leg_width + leg_width/4, leg_thickness + padding + nozzle_size])
+			cube([leg_width / 2, thickness, screw_plate_height]);
 		// screw hole
-		translate([palm_width - padding - leg_width / 2, padding + thickness + 1, screw_diameter + screw_y_offset])
+		translate([palm_width - padding - leg_width / 2, padding + thickness*2 + 1, screw_diameter + screw_y_offset])
 			rotate([90])
 			cylinder(thickness + 2, r=screw_diameter/2 + screw_safety, center=true);
 	}

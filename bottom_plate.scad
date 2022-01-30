@@ -10,7 +10,7 @@ module bottom_plate(thickness, radius, plate_length, plate_width, palm_length, p
 
 	// palm feet support
 	translate([plate_x_offset, 0, thickness]) 
-		palm_feets(3, 3, plate_width, palm_length, 15);
+		palm_feets(2, 3, plate_width, palm_length, 13);
 
 	// pcb outline
 	color("SlateGrey")
