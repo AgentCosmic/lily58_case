@@ -15,7 +15,7 @@ standoff_height = 8;
 translate([0, 0, plate_thickness + standoff_height])
 	top_plate(plate_thickness);
 color("Green")
-	translate([-79, 229.5, 7])
+	translate([-79, 229.5, plate_thickness + 6])
 	import("pcb.stl");
 color("DarkSlateGray")
 	bottom_plate(plate_thickness, bevel, plate_length, palm_width, palm_length, palm_height);

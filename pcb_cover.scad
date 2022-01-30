@@ -1,5 +1,4 @@
 module pcb_cover(height, thickness) {
-	// TODO add cutout for wires
 	difference() {
 		linear_extrude(height=height)
 			offset(r=3)
@@ -8,5 +7,8 @@ module pcb_cover(height, thickness) {
 		linear_extrude(height=height + 0.02)
 			offset(r=3 - thickness)
 			import("pcb.svg");
+		// wire hole
+		translate([-4, 105, 4])
+			cube([32, 5, 10]);
 	}
 }
