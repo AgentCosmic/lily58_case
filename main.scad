@@ -1,28 +1,24 @@
 include <variables.scad>;
-use <top_plate.scad>;
-use <bottom_plate.scad>;
+use <sofle/top_plate.scad>;
+use <sofle/bottom_plate.scad>;
 use <palm_rest.scad>;
-use <pcb_cover.scad>;
 
 plate_thickness = 3;
 bevel = 3;
 plate_length = 100;
-palm_width = 130.01;
+palm_width = 121.3;
 palm_length = 70;
 palm_height = 20;
 standoff_height = 8;
 
-translate([0, 0, plate_thickness + standoff_height])
+color("SlateGray")
+	translate([0, 0, plate_thickness + standoff_height - 2])
 	top_plate(plate_thickness);
 color("Green")
-	translate([-79, 229.5, plate_thickness + 6])
-	import("pcb.stl");
+	translate([-88, 223, plate_thickness + 5.6])
+	import("sofle/sofle_pcb.stl");
 color("DarkSlateGray")
 	bottom_plate(plate_thickness, bevel, plate_length, palm_width, palm_length, palm_height);
-
-color("White")
-	translate([4, 86, 3 - 0.01])
-	pcb_cover(standoff_height, nozzle_size*2);
 
 color("RoyalBlue")
 	translate([plate_x_offset, 0])
