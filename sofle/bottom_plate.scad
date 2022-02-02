@@ -7,9 +7,22 @@ module bottom_plate(thickness, radius, plate_length, palm_width, palm_length, pa
 		plate();
 		translate([plate_x_offset, 0]) 
 			feet_holes(palm_width, palm_length, thickness);
-		// center hold
-		translate([plate_x_offset + (palm_width - hole_width) / 2, 20, -0.01])
-			cube([20, 60, thickness + 0.02]);
+
+		// stand hook hole
+		translate([plate_x_offset + (palm_width - 20) / 2, 10, -0.01])
+			cube([20, thickness + 0.4, thickness + 0.02]);
+
+		// center hole
+		translate([plate_x_offset + (palm_width - hole_width) / 2, 25, -0.01])
+		hull() {
+			translate([0, 50])
+				cylinder(h=thickness + 0.02, r=radius);
+			translate([hole_width, 50])
+				cylinder(h=thickness + 0.02, r=radius);
+			translate([hole_width, 0])
+				cylinder(h=thickness + 0.02, r=radius);
+			cylinder(h=thickness + 0.02, r=radius);
+		}
 	}
 
 	// pcb outline

@@ -7,12 +7,11 @@ use <stand.scad>;
 plate_thickness = 3;
 bevel = 3;
 plate_length = 100;
-palm_width = 121.228;
 palm_length = 70;
 palm_height = 20;
 standoff_height = 8;
 
-translate([-16, 0, 49.8])
+translate([-14.9, 0, 49.8])
 rotate([0, 20]) {
 	color("SlateGray")
 		translate([0, 0, plate_thickness + standoff_height])

@@ -3,9 +3,8 @@ include <variables.scad>;
 module stand() {
 	length = 160;
 	tent_angle = 20;
-	ceiling_width = 120;
-	height = sin(tent_angle) * ceiling_width;
-	floor_width = cos(tent_angle) * ceiling_width;
+	height = sin(tent_angle) * palm_width;
+	floor_width = cos(tent_angle) * palm_width;
 	thickness = 3;
 	base_fatness = 10;
 	stopper_length = 30;
@@ -43,10 +42,11 @@ module stand() {
 	}
 
 	// hook
-	hook_width = 20;
+	hook_width = 12;
 	hook_height = 12;
-	translate([floor_width/2 + hook_width/4, thickness / 2, height/2 + hook_height/4 + thickness - 0.01])
+	translate([floor_width / 2, thickness / 2, thickness + height/2 - 0.01])
 		rotate([0, tent_angle])
+		translate([0, 0, hook_height / 2])
 		difference() {
 			cube([hook_width, thickness, hook_height], center=true);
 			translate([0, 0, 2])
