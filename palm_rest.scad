@@ -79,22 +79,22 @@ module feet_holes(width, length, floor_thickness) {
 }
 
 module palm_feets(thickness, height, palm_width, palm_length, screw_plate_height) {
-	translate([padding - thickness, palm_length - padding - thickness, 0])
-		feet();
-	translate([palm_width - leg_width - padding - thickness, palm_length - padding - thickness, 0])
-		feet();
-	translate([palm_width - leg_width - padding - thickness, padding - thickness, 0])
-		feet();
-	translate([padding - thickness, padding - thickness, 0])
-		feet();
-	module feet() {
-		difference() {
-			translate([-nozzle_size, -nozzle_size])
-			cube([leg_width + thickness*2 + nozzle_size*2, leg_thickness + thickness*2 + nozzle_size*2, height]);
-			translate([thickness - nozzle_size, thickness - nozzle_size, 0.01])
-				cube([leg_width + nozzle_size*2, leg_thickness + nozzle_size*2, height + 0.02]);
-		}
-	}
+	// translate([padding - thickness, palm_length - padding - thickness, 0])
+	// 	feet();
+	// translate([palm_width - leg_width - padding - thickness, palm_length - padding - thickness, 0])
+	// 	feet();
+	// translate([palm_width - leg_width - padding - thickness, padding - thickness, 0])
+	// 	feet();
+	// translate([padding - thickness, padding - thickness, 0])
+	// 	feet();
+	// module feet() {
+	// 	difference() {
+	// 		translate([-nozzle_size, -nozzle_size])
+	// 		cube([leg_width + thickness*2 + nozzle_size*2, leg_thickness + thickness*2 + nozzle_size*2, height]);
+	// 		translate([thickness - nozzle_size, thickness - nozzle_size, 0.01])
+	// 			cube([leg_width + nozzle_size*2, leg_thickness + nozzle_size*2, height + 0.02]);
+	// 	}
+	// }
 
 	// screw walls
 	translate([palm_width - padding - leg_width, padding + leg_thickness + nozzle_size])

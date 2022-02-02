@@ -43,9 +43,16 @@ module stand() {
 	}
 
 	// hook
-	rotate([0, tent_angle])
-		translate([floor_width / 2 - 20, 0, height - 0.01])
-		cube([20, thickness, 10]);
+	hook_width = 20;
+	hook_height = 12;
+	translate([floor_width/2 + hook_width/4, thickness / 2, height/2 + hook_height/4 + thickness - 0.01])
+		rotate([0, tent_angle])
+		difference() {
+			cube([hook_width, thickness, hook_height], center=true);
+			translate([0, 0, 2])
+				rotate([90])
+				cylinder(h=thickness + 0.02, d=screw_diameter, center=true);
+		}
 
 	module tri_feet() {
 		translate([0, thickness]) {
