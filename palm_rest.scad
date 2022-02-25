@@ -17,7 +17,7 @@ module palm_rest(width, height, length, radius) {
 		translate([r, length - r]) sphere(d=thickness);
 		translate([width - r, length - r]) sphere(d=thickness);
 		translate([width - r, r]) sphere(d=thickness);
-		translate([r, r])sphere(d=thickness);
+		translate([r, r]) sphere(d=thickness);
 	}
 
 	// // top plate

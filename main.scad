@@ -1,6 +1,7 @@
 include <variables.scad>;
 use <sofle/top_plate.scad>;
 use <sofle/bottom_plate.scad>;
+use <sofle/oled_cover.scad>;
 use <palm_rest.scad>;
 use <stand.scad>;
 
@@ -10,9 +11,9 @@ palm_length = 70;
 palm_height = 20;
 standoff_height = 8;
 
-translate([-14.9, 0, 49.8]) rotate([0, 20])
+// translate([-14.9, 0, 49.8]) rotate([0, 20])
 	case();
-translate([0, 10]) stand();
+// translate([0, 10]) stand();
 
 module case() {
 	color("SlateGray")
@@ -23,6 +24,9 @@ module case() {
 		import("sofle/sofle_pcb.stl");
 	color("DarkSlateGray")
 		bottom_plate(bevel, plate_length, palm_length, palm_height);
+	color("White")
+		translate([0, 127, plate_thickness + standoff_height - 5 + 12])
+		oled_cover();
 
 	color("RoyalBlue")
 		translate([plate_x_offset, 0])
