@@ -7,7 +7,7 @@ module stand() {
 	floor_width = cos(tent_angle) * palm_width;
 	thickness = 3;
 	base_fatness = 10;
-	stopper_length = 30;
+	stopper_length = 50;
 
 	// base
 	difference() {
@@ -23,10 +23,23 @@ module stand() {
 
 	// feets
 	translate([0, 0, thickness - 0.01]) {
-		tri_feet();
-		translate([0, length, 0])
-			mirror([0, 1, 0])
+		// bottom
+		difference() {
 			tri_feet();
+			translate([floor_width / 3*2, -0.01])
+				cube([floor_width / 3, 10, 20]);
+		}
+		// top
+		difference() {
+			translate([0, length, 0])
+				mirror([0, 1, 0])
+				tri_feet();
+			translate([25, length + 0.01, 0])
+				scale([1, 1.1])
+				mirror([0, 1, 0])
+				skew([0, -15, 0, 0, 0, 0])
+				tri_feet();
+		}
 		// middle
 		translate([0, length/2 - thickness, 0]) {
 			difference() {
@@ -59,6 +72,7 @@ module stand() {
 			rotate([90])
 				linear_extrude(thickness)
 				polygon(points=[ [0, 0], [0, height], [floor_width, 0] ]);
+			// fillet
 			translate([0, -0.01])
 				rotate([90, 0, 90])
 				linear_extrude(thickness)
