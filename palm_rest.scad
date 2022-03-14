@@ -62,7 +62,7 @@ module palm_rest(width, height, length, radius) {
 			// screw hole
 			translate([width / 2, 1, lock_diameter/2 + palm_screw_z])
 				rotate([90])
-				cylinder(leg_thickness + 2, r=lock_diameter/2 + screw_safety, center=true);
+				cylinder(leg_thickness + 2, r=screw_diameter/2 + screw_safety, center=true);
 		}
 	}
 }
@@ -92,6 +92,7 @@ module palm_feets(thickness, palm_length, screw_plate_height) {
 			cube([leg_width, leg_thickness + thickness*2 + nozzle_size*2, palm_hook_height]);
 			translate([leg_width/3 - nozzle_size, thickness - nozzle_size, 0.01])
 				cube([leg_width/3 + nozzle_size*2, leg_thickness + nozzle_size*2, palm_hook_height + 0.02]);
+			// hole
 			translate([leg_width / 2, leg_thickness*3 + 1, lock_diameter/2 + palm_screw_z])
 				rotate([90])
 				cylinder(leg_thickness*3 + 2, r=lock_diameter/2 + screw_safety);

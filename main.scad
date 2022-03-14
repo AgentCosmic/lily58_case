@@ -5,15 +5,17 @@ use <sofle/oled_cover.scad>;
 use <palm_rest.scad>;
 use <stand.scad>;
 
+plate_to_cap_height = 14; // approximate
 bevel = 3;
 plate_length = 100;
 palm_length = 70;
-palm_height = 20;
-standoff_height = 8;
+palm_height = standoff_height + plate_thickness + plate_to_cap_height;
 
-// translate([-14.9, 0, 49.8]) rotate([0, 20])
-	case();
-// translate([0, 10]) stand();
+module one_side() {
+	translate([-14.9, 0, 49.8]) rotate([0, 20])
+		case();
+	color("SteelBlue")translate([0, 10]) stand();
+}
 
 module case() {
 	color("SlateGray")
@@ -32,3 +34,15 @@ module case() {
 		translate([plate_x_offset, 0])
 		palm_rest(palm_width, palm_height, palm_length, bevel);
 }
+
+one_side();
+
+// color("DimGray") {
+// 	translate([50, 0])
+// 		rotate([0, 0, 10])
+// 		one_side();
+// 	translate([-50, 0])
+// 		rotate([0, 0, -10])
+// 		mirror([1, 0, 0])
+// 		one_side();
+// }

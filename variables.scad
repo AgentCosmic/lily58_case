@@ -3,8 +3,9 @@ plate_x_offset = 15.968;
 screw_diameter = 2.4;
 nozzle_size = 0.4;
 palm_width = 121.228;
-palm_hook_height = 12;
+palm_hook_height = 13;
 palm_screw_z = plate_thickness + 2;
+standoff_height = 7;
 
 /*skew takes an array of six angles:
  *x along y

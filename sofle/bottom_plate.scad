@@ -26,8 +26,8 @@ module bottom_plate(radius, plate_length, palm_length, palm_height) {
 		}
 	}
 
-	// pcb outline
-	outline_height = 4; // assuming: top plate = 3, pcb = 1.6, standoff = 8
+	// outer protection
+	outline_height = standoff_height + plate_thickness - 5 - 1.6 - 1; // assuming: pcb = 1.6
 	translate([0, 0, plate_thickness - 0.01])
 		difference() {
 			linear_extrude(height=outline_height)
