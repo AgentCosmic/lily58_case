@@ -27,9 +27,8 @@ module case() {
 	color("DarkSlateGray")
 		bottom_plate(bevel, plate_length, palm_length, palm_height);
 	color("White")
-		translate([0, 127, plate_thickness + standoff_height - 5 + 12])
+		translate([0, 127, plate_thickness + standoff_height + plate_thickness - 5 + 15])
 		oled_cover();
-
 	color("RoyalBlue")
 		translate([plate_x_offset, 0])
 		palm_rest(palm_width, palm_height, palm_length, bevel);
