@@ -2,7 +2,7 @@ include <../variables.scad>;
 use <../palm_rest.scad>;
 screw_y_offset = 5;
 
-module bottom_plate(radius, plate_length, palm_length, palm_height) {
+module bottom_plate(radius, palm_length) {
 	hole_width = 20;
 	difference() {
 		plate();

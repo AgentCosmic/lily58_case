@@ -6,8 +6,9 @@ padding = 10;
 screw_safety = 0.2;
 lock_diameter = 4.4;
 
-module palm_rest(width, height, length, radius) {
+module palm_rest(width, length) {
 	thickness = 3;
+	height = standoff_height + plate_thickness + plate_to_cap_height;
 
 	// top plate
 	translate([0, 0, -thickness/2 + height])
@@ -19,28 +20,6 @@ module palm_rest(width, height, length, radius) {
 		translate([width - r, r]) sphere(d=thickness);
 		translate([r, r]) sphere(d=thickness);
 	}
-
-	// // top plate
-	// translate([0, radius, height])
-	// 	cube([width, length - radius, thickness]);
-	// // round corners
-	// translate([0, length, height])
-	// 	linear_extrude(height=thickness)
-	// 	hull() {
-	// 		translate([radius, 0]) circle(radius);
-	// 		translate([width - radius, 0]) circle(radius);
-	// 	}
-    //
-	// // curve
-	// translate([width, radius + 0.01, height - radius + thickness])
-	// rotate([90, 0, -90])
-	// intersection() {
-	// 	difference() {
-	// 		cylinder(width*2, r=radius, center=true, $fn=16);
-	// 		cylinder(width*2 + 1, r=radius - thickness, center=true, $fn=16);
-	// 	}
-	// 	cube([radius, radius, width*2]);
-	// }
 
 	// legs
 	translate([padding, length - padding])
@@ -98,20 +77,4 @@ module palm_feets(thickness, palm_length, screw_plate_height) {
 				cylinder(leg_thickness*3 + 2, r=lock_diameter/2 + screw_safety);
 		}
 	}
-
-	// // screw walls
-	// translate([palm_width - padding - leg_width, padding + leg_thickness + nozzle_size])
-	// 	screw_wall();
-	// translate([padding, padding + leg_thickness + nozzle_size])
-	// 	screw_wall();
-	// module screw_wall() {
-	// 	difference() {
-	// 		translate([leg_width / 4, 0])
-	// 			cube([leg_width / 2, thickness, screw_plate_height]);
-	// 		// screw hole
-	// 		translate([leg_width / 2, thickness/2 + 0.01, screw_diameter + palm_screw_z])
-	// 			rotate([90])
-	// 			cylinder(thickness + 1, r=screw_diameter/2 + screw_safety, center=true);
-	// 	}
-	// }
 }
