@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128.702mm" height="97.769mm" viewBox="0 0 364.826 277.14">
+  <g id="top">
+    <rect id="S24" x="270.643" y="18.046" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-2" data-name="S24" x="270.643" y="179.901" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-3" data-name="S24" x="270.601" y="126.046" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-4" data-name="S24" x="270.64" y="71.621" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-5" data-name="S24" x="216.5" y="166.581" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-6" data-name="S24" x="216.502" y="112.437" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-7" data-name="S24" x="216.496" y="58.297" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-8" data-name="S24" x="216.513" y="4.438" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-9" data-name="S24" x="162.443" y="0.5" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-10" data-name="S24" x="162.644" y="54.615" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-11" data-name="S24" x="162.644" y="108.752" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-12" data-name="S24" x="162.64" y="162.611" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-13" data-name="S24" x="135.428" y="220.297" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-14" data-name="S24" x="81.569" y="226.676" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-15" data-name="S24" x="108.502" y="166.581" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-16" data-name="S24" x="108.502" y="112.443" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-17" data-name="S24" x="108.5" y="58.582" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-18" data-name="S24" x="108.5" y="4.438" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-19" data-name="S24" x="54.641" y="11.242" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-20" data-name="S24" x="54.644" y="65.388" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-21" data-name="S24" x="54.641" y="119.238" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-22" data-name="S24" x="54.641" y="173.105" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-23" data-name="S24" x="51.701" y="244.03" width="39.686" height="39.685" transform="translate(-163.347 56.604) rotate(-30)" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-24" data-name="S24" x="0.5" y="145.889" width="39.55" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <g>
+      <polygon points="229.254 220.3 229.254 259.99 189.574 259.99 189.574 247.44 189.574 220.3 229.254 220.3" style="fill: #231f20"/>
+      <g>
+        <line x1="189.574" y1="220.3" x2="229.254" y2="220.3" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="229.254" y1="220.3" x2="229.254" y2="259.99" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="229.254" y1="259.99" x2="189.574" y2="259.99" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="189.574" y1="247.44" x2="189.574" y2="220.3" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="189.574" y1="259.99" x2="189.574" y2="247.44" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+      </g>
+    </g>
+    <g>
+      <rect x="324.494" y="22.3" width="39.69" height="39.68" style="fill: #231f20"/>
+      <g>
+        <line x1="324.494" y1="22.3" x2="364.184" y2="22.3" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="364.184" y1="22.3" x2="364.184" y2="61.98" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="364.184" y1="61.98" x2="324.494" y2="61.98" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="324.494" y1="61.98" x2="324.494" y2="22.3" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+      </g>
+    </g>
+    <g>
+      <rect x="324.494" y="75.88" width="39.69" height="39.67" style="fill: #231f20"/>
+      <g>
+        <line x1="324.494" y1="75.88" x2="364.184" y2="75.88" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="364.184" y1="75.88" x2="364.184" y2="115.55" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="364.184" y1="115.55" x2="324.494" y2="115.55" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+        <line x1="324.494" y1="115.55" x2="324.494" y2="75.88" style="fill: none;stroke: #000;stroke-linecap: round;stroke-linejoin: round"/>
+      </g>
+    </g>
+    <rect id="S24-25" data-name="S24" x="324.64" y="184.156" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <rect id="S24-26" data-name="S24" x="324.502" y="130.301" width="39.686" height="39.685" style="fill: #231f20;stroke: #000"/>
+    <path id="H4" d="M144.625,72.938a3.327,3.327,0,1,0-3.328,3.329A3.328,3.328,0,0,0,144.625,72.938Z" transform="translate(-40.996 -14.52)" style="fill: #231f20;stroke: #000;stroke-linecap: round"/>
+    <path id="H4-2" data-name="H4" d="M144.625,180.655a3.327,3.327,0,1,0-3.328,3.328A3.328,3.328,0,0,0,144.625,180.655Z" transform="translate(-40.996 -14.52)" style="fill: #231f20;stroke: #000;stroke-linecap: round"/>
+    <path id="H4-3" data-name="H4" d="M360.625,187.458a3.327,3.327,0,1,0-3.328,3.328A3.328,3.328,0,0,0,360.625,187.458Z" transform="translate(-40.996 -14.52)" style="fill: #231f20;stroke: #000;stroke-linecap: round"/>
+    <path id="H4-4" data-name="H4" d="M360.625,79.174A3.327,3.327,0,1,0,357.3,82.5,3.328,3.328,0,0,0,360.625,79.174Z" transform="translate(-40.996 -14.52)" style="fill: #231f20;stroke: #000;stroke-linecap: round"/>
+    <path id="H4-5" data-name="H4" d="M74.893,229.411a3.327,3.327,0,1,0-3.328,3.328A3.328,3.328,0,0,0,74.893,229.411Z" transform="translate(-40.996 -14.52)" style="fill: #231f20;stroke: #000;stroke-linecap: round"/>
+  </g>
+</svg>
