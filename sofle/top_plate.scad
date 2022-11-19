@@ -27,3 +27,5 @@ module top_plate() {
 			cube([24, 60, 5]);
 	}
 }
+
+rotate([0, 180]) top_plate();

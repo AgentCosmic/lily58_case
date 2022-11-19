@@ -6,27 +6,26 @@ padding = 10;
 screw_safety = 0.2;
 lock_diameter = 4.4;
 
-module palm_rest(width, length) {
+module palm_rest() {
 	thickness = 3;
 	height = standoff_height + plate_thickness + plate_to_cap_height;
 
 	// top plate
 	translate([0, 0, -thickness/2 + height])
 	hull() {
-		$fn = 12;
 		r = thickness/2;
-		translate([r, length - r]) sphere(d=thickness);
-		translate([width - r, length - r]) sphere(d=thickness);
-		translate([width - r, r]) sphere(d=thickness);
+		translate([r, palm_length - r]) sphere(d=thickness);
+		translate([palm_width - r, palm_length - r]) sphere(d=thickness);
+		translate([palm_width - r, r]) sphere(d=thickness);
 		translate([r, r]) sphere(d=thickness);
 	}
 
 	// legs
-	translate([padding, length - padding])
+	translate([padding, palm_length - padding])
 		palm_leg(leg_width, height);
-	translate([width - leg_width - padding, length - padding])
+	translate([palm_width - leg_width - padding, palm_length - padding])
 		palm_leg(leg_width, height);
-	translate([width - leg_width - padding, padding])
+	translate([palm_width - leg_width - padding, padding])
 		palm_leg(leg_width, height);
 	translate([padding, padding])
 		palm_leg(leg_width, height);
@@ -57,10 +56,14 @@ module feet_holes(width, length, floor_thickness) {
 	}
 }
 
-module palm_feets(thickness, palm_length, screw_plate_height) {
-	translate([padding, palm_length - padding - thickness, 0])
+module palm_feets(thickness, palm_length) {
+	translate([padding, palm_length - padding - nozzle_size, 0])
+		translate([leg_width, leg_thickness + thickness + nozzle_size, 0])
+		rotate([0, 0, 180])
 		feet();
-	translate([palm_width - leg_width - padding, palm_length - padding - thickness, 0])
+	translate([palm_width - leg_width - padding, palm_length - padding - nozzle_size, 0])
+		translate([leg_width, leg_thickness + thickness + nozzle_size, 0])
+		rotate([0, 0, 180])
 		feet();
 	translate([palm_width - leg_width - padding, padding - thickness, 0])
 		feet();
@@ -68,9 +71,9 @@ module palm_feets(thickness, palm_length, screw_plate_height) {
 		feet();
 	module feet() {
 		difference() {
-			cube([leg_width, leg_thickness + thickness*2 + nozzle_size*2, palm_hook_height]);
+			cube([leg_width, leg_thickness + thickness + nozzle_size, palm_hook_height]);
 			translate([leg_width/3 - nozzle_size, thickness - nozzle_size, 0.01])
-				cube([leg_width/3 + nozzle_size*2, leg_thickness + nozzle_size*2, palm_hook_height + 0.02]);
+				cube([leg_width/3 + nozzle_size*2, leg_thickness + nozzle_size*2 + 0.01, palm_hook_height + 0.02]);
 			// hole
 			translate([leg_width / 2, leg_thickness*3 + 1, lock_diameter/2 + palm_screw_z])
 				rotate([90])
@@ -78,3 +81,5 @@ module palm_feets(thickness, palm_length, screw_plate_height) {
 		}
 	}
 }
+
+rotate([0, 180]) palm_rest();

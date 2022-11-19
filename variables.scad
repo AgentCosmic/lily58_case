@@ -28,3 +28,5 @@ module skew(dims) {
 	multmatrix(matrix)
 		children();
 }
+
+$fn = 36;

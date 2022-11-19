@@ -2,7 +2,8 @@ include <../variables.scad>;
 use <../palm_rest.scad>;
 screw_y_offset = 5;
 
-module bottom_plate(radius, palm_length) {
+module bottom_plate() {
+	radius = 3;
 	hole_width = 20;
 	difference() {
 		plate();
@@ -14,16 +15,16 @@ module bottom_plate(radius, palm_length) {
 			cube([20, plate_thickness + 0.4, plate_thickness + 0.02]);
 
 		// center hole
-		translate([plate_x_offset + (palm_width - hole_width) / 2, 25, -0.01])
-		hull() {
-			translate([0, 50])
-				cylinder(h=plate_thickness + 0.02, r=radius);
-			translate([hole_width, 50])
-				cylinder(h=plate_thickness + 0.02, r=radius);
-			translate([hole_width, 0])
-				cylinder(h=plate_thickness + 0.02, r=radius);
-			cylinder(h=plate_thickness + 0.02, r=radius);
-		}
+		// translate([plate_x_offset + (palm_width - hole_width) / 2, 25, -0.01])
+		// hull() {
+		// 	translate([0, 50])
+		// 		cylinder(h=plate_thickness + 0.02, r=radius);
+		// 	translate([hole_width, 50])
+		// 		cylinder(h=plate_thickness + 0.02, r=radius);
+		// 	translate([hole_width, 0])
+		// 		cylinder(h=plate_thickness + 0.02, r=radius);
+		// 	cylinder(h=plate_thickness + 0.02, r=radius);
+		// }
 	}
 
 	// outer protection
@@ -48,6 +49,8 @@ module bottom_plate(radius, palm_length) {
 		}
 		// palm feet support
 		translate([plate_x_offset, 0]) 
-			palm_feets(3, palm_length, 13);
+			palm_feets(3, palm_length);
 	}
 }
+
+bottom_plate();

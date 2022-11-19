@@ -86,3 +86,5 @@ module stand() {
 			cube([thickness, stopper_length, thickness + 6]);
 	}
 }
+
+stand();

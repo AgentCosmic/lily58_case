@@ -12,3 +12,5 @@ module oled_cover() {
 	translate([(cover_width - stand_width) / 2, 0, -stand_height + 0.01])
 		cube([stand_width, plate_thickness, stand_height]);
 }
+
+rotate([0, 180]) oled_cover();
